@@ -1,0 +1,82 @@
+New Project - GCC C Executable Project - ATmega128A
+
+기본 헤더 파일
+#include <avr/io.h>
+
+프로젝트 새로 만들때 마다 설정
+Project - 프로젝트 이름 Properties - Toolchain - AVR/GNU C Compiler - Symbols - Add - F_CPU=7372800
+                                                                                     - Optimization - Optimize for size (-Os)
+
+코드에 쓸 수있음
+#define F_CPU 7372800UL
+
+실행
+Tools - add target - stk500 - 포트번호 
+        - Device Programming - STK500 - ATmega128A 
+
+FND LED (책 참고)
+   -A
+-F    -B
+   -G
+-E    -C
+   -D
+
+unsigned char FND_DATA_TBL [] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7C,0x07,0x7F,
+				0x67,0x77,0x7C,0x39,0x5E,0x79,0x71,0x08,0x80}; // 0~9, A~F, _ .
+
+인터럽트
+EICRA : 외부 인터럽트 0~3의 트리거 설정에 사용 (3 3 2 2 1 1 0 0)
+EICRB : 외부 인터럽트 4~7의 트리거 설정에 사용 (7 7 6 6 5 5 4 4)
+1 0 하강 1 1 상승
+
+EIMSK : 외부 인터럽트의 개별적인 허용 제어 레지스터 (7 6 5 4 3 2 1 0)
+EIFR : 외부 인터럽트 발생 여부를 알려주는 레지스터 (7 6 5 4 3 2 1 0)
+
+
+타이머/카운터
+TCCRn : 타이머/카운터 제어 레지스터 n (n=0 or 2)
+7 FOCn | 6 WGMn0 | 5 COMn1 | 4 COMn0 | 3 WGMn1 | 2 CSn2 | 1 Csn1 | 0 Csn0
+
+
+
+프리스케일러 0x05;
+
+TCNTn : 타이머/카운터 레지스터 n(n은 0 or 2)
+cpu 주파수 7372800에서 / 1024 = 256 - 76 = 184
+카운터시작 위치 = 255 - 타이머 클럭 개수(255 - 144 = 122)
+
+TIMSK : 타이머 인터럽트 마스크 레지스터
+TIFR : 타이머 인터럽트 플래그 레지스터
+
+OCR0 : 
+
+-----------------------------------------------------------------------
+
+int main(){
+   DDRA = 0xFF; // A 출력포트로
+   DDRE = 0x00; // E 입력포트로
+   
+   TCCR2 = 0x05; // TCCR2 |= (1<< CS22) | (1<<CS20);, 프리스케일러 1024, 일반모드
+   OCR2 = 184; // 비교일치R2에 184값 저장
+   TIMSK = 0x80; // TIMSK |= (1<<OCTE2);, 타이머카운터2 비교일치인터럽트 인에이블
+   TIFR |=1 << OCF2; // 타이머카운터2 비교일치 플래그 리셋
+   
+   EICRB = 0x03; // EICRB |= (1<<ISC41) | (1<<ISC40);, 외부인터럽트4 트리거 설정
+   EIMSK = 0x10; // EIMSK |= (1<<INT4);, 외부인터럽트4 인에이블
+   EIFR = 0x10;  // EIFR |= (1<<INTF4);, 외부인터럽트4 플래그 리셋
+   
+   sei(); // 전체인터럽트 리셋
+   
+   while(1){
+      PORTA = FND_DATA_TBL[time_s];
+   }
+   return 0;
+            }
+
+-----------------------------------------------------------------------
+
+TCCRnA
+7 COMnA1 | 6 COMnA0 | 5 COMnB1 | 4 COMnB0 | 3 COMnC1 | 2 COMnC0 | 1 WGMn 1 | 0 WGMn0
+
+TCCRnB
+7 ICNCn | 

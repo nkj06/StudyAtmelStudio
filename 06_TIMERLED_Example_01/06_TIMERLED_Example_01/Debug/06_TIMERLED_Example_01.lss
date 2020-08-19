@@ -1,0 +1,325 @@
+
+06_TIMERLED_Example_01.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000012  00800100  000001c2  00000256  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000001c2  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000003  00800112  00800112  00000268  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000268  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000298  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000028  00000000  00000000  000002d8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000008a7  00000000  00000000  00000300  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000007bf  00000000  00000000  00000ba7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000002ae  00000000  00000000  00001366  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000064  00000000  00000000  00001614  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000041b  00000000  00000000  00001678  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000000a2  00000000  00000000  00001a93  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000018  00000000  00000000  00001b35  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	45 c0       	rjmp	.+138    	; 0x8c <__ctors_end>
+   2:	00 00       	nop
+   4:	60 c0       	rjmp	.+192    	; 0xc6 <__bad_interrupt>
+   6:	00 00       	nop
+   8:	5e c0       	rjmp	.+188    	; 0xc6 <__bad_interrupt>
+   a:	00 00       	nop
+   c:	5c c0       	rjmp	.+184    	; 0xc6 <__bad_interrupt>
+   e:	00 00       	nop
+  10:	5a c0       	rjmp	.+180    	; 0xc6 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	58 c0       	rjmp	.+176    	; 0xc6 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	56 c0       	rjmp	.+172    	; 0xc6 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	54 c0       	rjmp	.+168    	; 0xc6 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	52 c0       	rjmp	.+164    	; 0xc6 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	50 c0       	rjmp	.+160    	; 0xc6 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	4e c0       	rjmp	.+156    	; 0xc6 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	4c c0       	rjmp	.+152    	; 0xc6 <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	4a c0       	rjmp	.+148    	; 0xc6 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	48 c0       	rjmp	.+144    	; 0xc6 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	46 c0       	rjmp	.+140    	; 0xc6 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	44 c0       	rjmp	.+136    	; 0xc6 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	42 c0       	rjmp	.+132    	; 0xc6 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	40 c0       	rjmp	.+128    	; 0xc6 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	3e c0       	rjmp	.+124    	; 0xc6 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	3c c0       	rjmp	.+120    	; 0xc6 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	3a c0       	rjmp	.+116    	; 0xc6 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	38 c0       	rjmp	.+112    	; 0xc6 <__bad_interrupt>
+  56:	00 00       	nop
+  58:	36 c0       	rjmp	.+108    	; 0xc6 <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	34 c0       	rjmp	.+104    	; 0xc6 <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	32 c0       	rjmp	.+100    	; 0xc6 <__bad_interrupt>
+  62:	00 00       	nop
+  64:	5a c0       	rjmp	.+180    	; 0x11a <__vector_25>
+  66:	00 00       	nop
+  68:	2e c0       	rjmp	.+92     	; 0xc6 <__bad_interrupt>
+  6a:	00 00       	nop
+  6c:	2c c0       	rjmp	.+88     	; 0xc6 <__bad_interrupt>
+  6e:	00 00       	nop
+  70:	2a c0       	rjmp	.+84     	; 0xc6 <__bad_interrupt>
+  72:	00 00       	nop
+  74:	28 c0       	rjmp	.+80     	; 0xc6 <__bad_interrupt>
+  76:	00 00       	nop
+  78:	26 c0       	rjmp	.+76     	; 0xc6 <__bad_interrupt>
+  7a:	00 00       	nop
+  7c:	24 c0       	rjmp	.+72     	; 0xc6 <__bad_interrupt>
+  7e:	00 00       	nop
+  80:	22 c0       	rjmp	.+68     	; 0xc6 <__bad_interrupt>
+  82:	00 00       	nop
+  84:	20 c0       	rjmp	.+64     	; 0xc6 <__bad_interrupt>
+  86:	00 00       	nop
+  88:	1e c0       	rjmp	.+60     	; 0xc6 <__bad_interrupt>
+	...
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e2 ec       	ldi	r30, 0xC2	; 194
+  a0:	f1 e0       	ldi	r31, 0x01	; 1
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a2 31       	cpi	r26, 0x12	; 18
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	21 e0       	ldi	r18, 0x01	; 1
+  b4:	a2 e1       	ldi	r26, 0x12	; 18
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	a5 31       	cpi	r26, 0x15	; 21
+  be:	b2 07       	cpc	r27, r18
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	02 d0       	rcall	.+4      	; 0xc8 <main>
+  c4:	7c c0       	rjmp	.+248    	; 0x1be <_exit>
+
+000000c6 <__bad_interrupt>:
+  c6:	9c cf       	rjmp	.-200    	; 0x0 <__vectors>
+
+000000c8 <main>:
+volatile unsigned char time_s=0;
+volatile unsigned char FND_flag=0, edge_flag=0;
+
+int main()
+{
+   DDRA = 0xFF;
+  c8:	8f ef       	ldi	r24, 0xFF	; 255
+  ca:	8a bb       	out	0x1a, r24	; 26
+   DDRE = 0x00;
+  cc:	12 b8       	out	0x02, r1	; 2
+
+   TCCR3A = 0; // 0x00
+  ce:	10 92 8b 00 	sts	0x008B, r1	; 0x80008b <__TEXT_REGION_LENGTH__+0x7e008b>
+   TCCR3B = (1 << ICES3) | (1 << CS32) | (1 << CS30); // 0x45 // 프리스케일러 1024, 상승에지 캡처 트리거 설정
+  d2:	85 e4       	ldi	r24, 0x45	; 69
+  d4:	80 93 8a 00 	sts	0x008A, r24	; 0x80008a <__TEXT_REGION_LENGTH__+0x7e008a>
+   ETIMSK = 1 << TICIE3; // 0x20
+  d8:	80 e2       	ldi	r24, 0x20	; 32
+  da:	80 93 7d 00 	sts	0x007D, r24	; 0x80007d <__TEXT_REGION_LENGTH__+0x7e007d>
+   ETIFR |= 1 << ICF3;
+  de:	80 91 7c 00 	lds	r24, 0x007C	; 0x80007c <__TEXT_REGION_LENGTH__+0x7e007c>
+  e2:	80 62       	ori	r24, 0x20	; 32
+  e4:	80 93 7c 00 	sts	0x007C, r24	; 0x80007c <__TEXT_REGION_LENGTH__+0x7e007c>
+
+   sei();
+  e8:	78 94       	sei
+
+   PORTA = FND_DATA_TBL[0];
+  ea:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+  ee:	8b bb       	out	0x1b, r24	; 27
+   while(1)
+   {
+      if(FND_flag)
+      {
+         if(time_s > 15) time_s=15; // 최대 15초까지 표시(F)
+  f0:	9f e0       	ldi	r25, 0x0F	; 15
+   sei();
+
+   PORTA = FND_DATA_TBL[0];
+   while(1)
+   {
+      if(FND_flag)
+  f2:	80 91 13 01 	lds	r24, 0x0113	; 0x800113 <FND_flag>
+  f6:	88 23       	and	r24, r24
+  f8:	e1 f3       	breq	.-8      	; 0xf2 <main+0x2a>
+      {
+         if(time_s > 15) time_s=15; // 최대 15초까지 표시(F)
+  fa:	80 91 14 01 	lds	r24, 0x0114	; 0x800114 <time_s>
+  fe:	80 31       	cpi	r24, 0x10	; 16
+ 100:	10 f0       	brcs	.+4      	; 0x106 <main+0x3e>
+ 102:	90 93 14 01 	sts	0x0114, r25	; 0x800114 <time_s>
+         
+         PORTA = FND_DATA_TBL[time_s];
+ 106:	e0 91 14 01 	lds	r30, 0x0114	; 0x800114 <time_s>
+ 10a:	f0 e0       	ldi	r31, 0x00	; 0
+ 10c:	e0 50       	subi	r30, 0x00	; 0
+ 10e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 110:	80 81       	ld	r24, Z
+ 112:	8b bb       	out	0x1b, r24	; 27
+         FND_flag=0;
+ 114:	10 92 13 01 	sts	0x0113, r1	; 0x800113 <FND_flag>
+ 118:	ec cf       	rjmp	.-40     	; 0xf2 <main+0x2a>
+
+0000011a <__vector_25>:
+
+   return 0;
+}
+
+SIGNAL(TIMER3_CAPT_vect)
+{
+ 11a:	1f 92       	push	r1
+ 11c:	0f 92       	push	r0
+ 11e:	0f b6       	in	r0, 0x3f	; 63
+ 120:	0f 92       	push	r0
+ 122:	11 24       	eor	r1, r1
+ 124:	5f 93       	push	r21
+ 126:	6f 93       	push	r22
+ 128:	7f 93       	push	r23
+ 12a:	8f 93       	push	r24
+ 12c:	9f 93       	push	r25
+ 12e:	af 93       	push	r26
+ 130:	bf 93       	push	r27
+   cli();
+ 132:	f8 94       	cli
+
+   unsigned int count_check;
+
+   // 스위치가 눌린시간 측정을 위해 상승에지에서 하강에지까지의 시간 계산
+   if(edge_flag==0) // 상승 에지(스위치를 누르면)
+ 134:	80 91 12 01 	lds	r24, 0x0112	; 0x800112 <__data_end>
+ 138:	81 11       	cpse	r24, r1
+ 13a:	0f c0       	rjmp	.+30     	; 0x15a <__vector_25+0x40>
+   {
+      TCCR3B = (1 << CS32) | (1 << CS30); // 0x05 // 프리스케일러 1024, 하강에지 캡처 트리거 설정
+ 13c:	85 e0       	ldi	r24, 0x05	; 5
+ 13e:	80 93 8a 00 	sts	0x008A, r24	; 0x80008a <__TEXT_REGION_LENGTH__+0x7e008a>
+      TCNT3 = 0; // TCNT3 레지스터 0으로 초기화
+ 142:	10 92 89 00 	sts	0x0089, r1	; 0x800089 <__TEXT_REGION_LENGTH__+0x7e0089>
+ 146:	10 92 88 00 	sts	0x0088, r1	; 0x800088 <__TEXT_REGION_LENGTH__+0x7e0088>
+      ICR3 = 0; // ICR3 레지스터 0으로 초기화
+ 14a:	10 92 81 00 	sts	0x0081, r1	; 0x800081 <__TEXT_REGION_LENGTH__+0x7e0081>
+ 14e:	10 92 80 00 	sts	0x0080, r1	; 0x800080 <__TEXT_REGION_LENGTH__+0x7e0080>
+      edge_flag=1;
+ 152:	81 e0       	ldi	r24, 0x01	; 1
+ 154:	80 93 12 01 	sts	0x0112, r24	; 0x800112 <__data_end>
+ 158:	11 c0       	rjmp	.+34     	; 0x17c <__vector_25+0x62>
+   }
+   else // 하강 에지
+   {
+      TCCR3B = (1 << ICES3) | (1 << CS32) | (1 << CS30); // 0x45 // 프리스케일러 1024, 상승에지 캡처 트리거 설정
+ 15a:	85 e4       	ldi	r24, 0x45	; 69
+ 15c:	80 93 8a 00 	sts	0x008A, r24	; 0x80008a <__TEXT_REGION_LENGTH__+0x7e008a>
+      count_check = ICR3;
+ 160:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <__TEXT_REGION_LENGTH__+0x7e0080>
+ 164:	90 91 81 00 	lds	r25, 0x0081	; 0x800081 <__TEXT_REGION_LENGTH__+0x7e0081>
+
+      // 7372800/1024 = 7200 Hz, 1초동안 TCNT의 값은 7200
+      time_s = count_check/3600; // 누를 시간을 0.5초 단위로 변경
+ 168:	60 e1       	ldi	r22, 0x10	; 16
+ 16a:	7e e0       	ldi	r23, 0x0E	; 14
+ 16c:	14 d0       	rcall	.+40     	; 0x196 <__udivmodhi4>
+ 16e:	60 93 14 01 	sts	0x0114, r22	; 0x800114 <time_s>
+
+      FND_flag=1;
+ 172:	81 e0       	ldi	r24, 0x01	; 1
+ 174:	80 93 13 01 	sts	0x0113, r24	; 0x800113 <FND_flag>
+      edge_flag=0;
+ 178:	10 92 12 01 	sts	0x0112, r1	; 0x800112 <__data_end>
+   }
+
+   sei();
+ 17c:	78 94       	sei
+ 17e:	bf 91       	pop	r27
+ 180:	af 91       	pop	r26
+ 182:	9f 91       	pop	r25
+ 184:	8f 91       	pop	r24
+ 186:	7f 91       	pop	r23
+ 188:	6f 91       	pop	r22
+ 18a:	5f 91       	pop	r21
+ 18c:	0f 90       	pop	r0
+ 18e:	0f be       	out	0x3f, r0	; 63
+ 190:	0f 90       	pop	r0
+ 192:	1f 90       	pop	r1
+ 194:	18 95       	reti
+
+00000196 <__udivmodhi4>:
+ 196:	aa 1b       	sub	r26, r26
+ 198:	bb 1b       	sub	r27, r27
+ 19a:	51 e1       	ldi	r21, 0x11	; 17
+ 19c:	07 c0       	rjmp	.+14     	; 0x1ac <__udivmodhi4_ep>
+
+0000019e <__udivmodhi4_loop>:
+ 19e:	aa 1f       	adc	r26, r26
+ 1a0:	bb 1f       	adc	r27, r27
+ 1a2:	a6 17       	cp	r26, r22
+ 1a4:	b7 07       	cpc	r27, r23
+ 1a6:	10 f0       	brcs	.+4      	; 0x1ac <__udivmodhi4_ep>
+ 1a8:	a6 1b       	sub	r26, r22
+ 1aa:	b7 0b       	sbc	r27, r23
+
+000001ac <__udivmodhi4_ep>:
+ 1ac:	88 1f       	adc	r24, r24
+ 1ae:	99 1f       	adc	r25, r25
+ 1b0:	5a 95       	dec	r21
+ 1b2:	a9 f7       	brne	.-22     	; 0x19e <__udivmodhi4_loop>
+ 1b4:	80 95       	com	r24
+ 1b6:	90 95       	com	r25
+ 1b8:	bc 01       	movw	r22, r24
+ 1ba:	cd 01       	movw	r24, r26
+ 1bc:	08 95       	ret
+
+000001be <_exit>:
+ 1be:	f8 94       	cli
+
+000001c0 <__stop_program>:
+ 1c0:	ff cf       	rjmp	.-2      	; 0x1c0 <__stop_program>
